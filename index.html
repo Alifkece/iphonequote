@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPHONE QUOTE GENERATOR</title>
+  <title>Aliftzycrt</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <style>
     :root {
       --bg:#000000; --card:#1a1a1a;
@@ -21,7 +22,7 @@
                  var(--bg);
       color:var(--text);min-height:100vh;overflow-x:hidden;
     }
-    
+
     .server-banner {
       border-radius: 15px;
       margin: 20px auto 30px;
@@ -127,12 +128,12 @@
       backdrop-filter: blur(12px);
       transition: all 0.3s ease;
     }
-    
+
     .menu-toggle:hover {
       background: rgba(255, 255, 255, 0.25);
       transform: scale(1.05);
     }
-    
+
     .menu-toggle i {
       font-size: 20px;
     }
@@ -150,11 +151,11 @@
       transform: translateX(-100%);
       transition: transform 0.3s ease;
     }
-    
+
     .sidebar.active {
       transform: translateX(0);
     }
-    
+
     .sidebar-overlay {
       position: fixed;
       top: 0;
@@ -166,7 +167,7 @@
       display: none;
       backdrop-filter: blur(3px);
     }
-    
+
     .sidebar-overlay.active {
       display: block;
     }
@@ -221,7 +222,7 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    
+
     .app-title{
       font-family:'Orbitron',sans-serif;
       font-size: 22px;
@@ -231,7 +232,7 @@
       text-shadow:0 0 12px rgba(255,255,255,0.5);
       margin-bottom: 8px;
     }
-    
+
     .access-info{
       font-size: 12px;
       text-align:center;
@@ -244,7 +245,7 @@
       z-index: 1;
       border: 1px solid rgba(255,255,255,0.1);
     }
-    
+
     .access-info::before {
       content: '';
       position: absolute;
@@ -262,16 +263,16 @@
       animation: borderGlow 3s linear infinite;
       background-size: 400% 400%;
     }
-    
+
     @keyframes borderGlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    
+
     .nav-menu{ list-style:none; margin-top:25px; }
     .nav-item { margin-bottom: 8px; }
-    
+
     .nav-link{
       display:flex;
       align-items:center;
@@ -284,7 +285,7 @@
       transition:.3s;
       font-weight:500;
     }
-    
+
     .nav-link:hover,
     .nav-link.active{
       background:linear-gradient(90deg,rgba(255,255,255,0.15),rgba(255,255,255,0.08));
@@ -298,7 +299,7 @@
       padding: 20px 35px 35px;
       transition: margin-left 0.3s ease;
     }
-    
+
     .header{
       display:flex;
       justify-content:space-between;
@@ -307,7 +308,7 @@
       padding-bottom:20px;
       border-bottom:1px solid rgba(255,255,255,0.15);
     }
-    
+
     .header-title{
       font-family:'Orbitron',sans-serif;
       font-size:28px;
@@ -576,7 +577,7 @@
       .menu-toggle { display: none; }
       .bottom-nav { display: none; }
     }
-    
+
     @media (max-width: 1023px) {
       .main-content { margin-left: 0; padding: 15px 20px 80px; }
       .header-title { font-size: 24px; }
@@ -588,6 +589,7 @@
     @media (max-width: 480px) {
       .form-section, .info-section { padding: 20px; }
     }
+
   </style>
 </head>
 <body>
@@ -596,7 +598,6 @@
     <div class="server-banner">
       <video class="banner-video" autoplay muted loop playsinline>
         <source src="https://files.catbox.moe/5i0z54.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
       <div class="banner-content">
         <div class="banner-title">Aliftzycrt</div>
@@ -620,7 +621,7 @@
         <i class="fas fa-quote-right"></i>
         Quote Generator Tools
       </h2>
-      
+
       <div class="label">
         <i class="fas fa-clock"></i> Jam
       </div>
@@ -646,7 +647,7 @@
       <button class="action-btn-form" id="generateBtn">
         <i class="fas fa-rocket"></i> GENERATE QUOTE
       </button>
-      
+
       <div class="loading" id="loading">🔄 Sedang membuat gambar...</div>
       <div class="error" id="error"></div>
     </div>
@@ -656,6 +657,7 @@
       <br>
       <a href="#" class="download-btn" id="downloadBtn" download="iphone-quote.png">Download</a>
     </div>
+
 
     <div class="info-section">
       <h2 class="section-title">
@@ -718,73 +720,71 @@
         return;
       }
 
-      error.style.display = 'none';
-      previewArea.style.display = 'none';
-      loading.style.display = 'block';
-      generateBtn.disabled = true;
-      generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
+    error.style.display = 'none';
+    previewArea.style.display = 'none';
+    loading.style.display = 'block';
+    generateBtn.disabled = true;
+    generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
 
-      try {
-        const url = `https://brat.siputzx.my.id/iphone-quoted?time=${encodeURIComponent(time)}&batteryPercentage=${battery}&carrierName=${encodeURIComponent(carrier)}&messageText=${encodeURIComponent(message)}&emojiStyle=apple`;
+    try {
+      const url = `https://brat.siputzx.my.id/iphone-quoted?time=${encodeURIComponent(time)}&batteryPercentage=${battery}&carrierName=${encodeURIComponent(carrier)}&messageText=${encodeURIComponent(message)}&emojiStyle=apple`;
 
-        previewImage.onload = function() {
-          previewArea.style.display = 'block';
-          loading.style.display = 'none';
-          generateBtn.disabled = false;
-          generateBtn.innerHTML = '<i class="fas fa-rocket"></i> GENERATE QUOTE';
-
-          downloadBtn.onclick = async function(e) {
-            e.preventDefault();
-            try {
-              const response = await fetch(url);
-              const blob = await response.blob();
-              const downloadUrl = URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = downloadUrl;
-              a.download = `iphone-quote-${Date.now()}.png`;
-              a.click();
-              URL.revokeObjectURL(downloadUrl);
-            } catch {
-              window.open(url, '_blank');
-            }
-          };
-        };
-
-        previewImage.onerror = function() {
-          showError('❌ Gagal memuat gambar.');
-          loading.style.display = 'none';
-          generateBtn.disabled = false;
-          generateBtn.innerHTML = '<i class="fas fa-rocket"></i> GENERATE QUOTE';
-        };
-
-        previewImage.src = url;
-        downloadBtn.href = url;
-
-      } catch (err) {
-        showError('Error: ' + err.message);
-      } finally {
+      previewImage.onload = function() {
+        previewArea.style.display = 'block';
         loading.style.display = 'none';
         generateBtn.disabled = false;
         generateBtn.innerHTML = '<i class="fas fa-rocket"></i> GENERATE QUOTE';
-      }
-    });
 
-    function showError(message) {
-      error.textContent = message;
-      error.style.display = 'block';
+        // FIX DOWNLOAD — LANGSUNG DOWNLOAD
+        downloadBtn.onclick = async function(e) {
+          e.preventDefault();
+          try {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            const downloadUrl = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = downloadUrl;
+            a.download = `iphone-quote-${Date.now()}.png`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(downloadUrl);
+          } catch {
+            window.location.href = url;
+          }
+        };
+      };
+
+      previewImage.onerror = function() {
+        showError('❌ Gagal memuat gambar.');
+        loading.style.display = 'none';
+        generateBtn.disabled = false;
+        generateBtn.innerHTML = '<i class="fas fa-rocket"></i> GENERATE QUOTE';
+      };
+
+      previewImage.src = url;
+      downloadBtn.href = url;
+
+    } catch (err) {
+      showError('Error: ' + err.message);
+    } finally {
+      loading.style.display = 'none';
+      generateBtn.disabled = false;
+      generateBtn.innerHTML = '<i class="fas fa-rocket"></i> GENERATE QUOTE';
     }
+  });
 
-    document.addEventListener('DOMContentLoaded', function() {
-      updateCurrentTime();
-      setInterval(updateCurrentTime, 1000);
-    });
+  function showError(message) {
+    error.textContent = message;
+    error.style.display = 'block';
+  }
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', function() {
-        if (window.innerWidth < 1024) { toggleSidebar(); }
-      });
-    });
-  </script>
+  document.addEventListener('DOMContentLoaded', function() {
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
+  });
+
+</script>
 
 </body>
 </html>
